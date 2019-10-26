@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
-from .forms import GeneroForms
+from .forms import *
+from .models import *
 
 def Home(request):
     return render(request,'index.html')
@@ -11,5 +12,9 @@ def CrearGenero(request):
             genero_forms.save()
             return redirect('index')
     else :
-        genero_forms=GeneroForms()
-        return render(request,'crear_genero.html',{'autor_form':genero_forms})
+        genero_forms= GeneroForms()
+        return render(request,'crear_genero.html',{'genero_forms':genero_forms})
+
+def ListarGenero(request):
+    generos=Genero.objects.all()
+    return render(request,'listar_genero.html',{'generos':generos})

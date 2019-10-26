@@ -8,7 +8,8 @@
 </head>
 <body>
     <form method="POST">
-            {{genero_forms.as_p}}
+            {% csrf_token %}
+            {{ genero_forms.as_p }}
             <button type="submit">crear</button>
     </form>
 </body>

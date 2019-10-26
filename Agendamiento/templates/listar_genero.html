@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>listar</title>
+</head>
+<body>
+    {% if generos %}
+    <table border="2">
+        <tbody>
+                <tr>
+                        <tr>id</tr>
+                        <tr>Nombre</tr>
+                    </tr>
+            {% for genero in generos %}
+            <tr>
+                <td>{{ genero.id }}</td>
+                <td>{{ genero.title }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h2>no hay generos que mostrar</h2>
+    {%endif%}
+</body>
+</html>
